@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ControlUI</class>
+ <widget class="QWidget" name="ControlUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>581</width>
+    <height>378</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>农委设备终端控制</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../MyCPPProject/Image/png/Weather.ico</normaloff>../../MyCPPProject/Image/png/Weather.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(77,77,77);color:white</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>5</y>
+     <width>571</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+    </font>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QLabel" name="TitleLabel_Image">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>10</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../MyCPPProject_PL/Image/png/control.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_WND">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>10</y>
+      <width>46</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+     </font>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QScrollArea" name="ScrollArea_MinBtn">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>3</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+      </font>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="ScrollAreaWidgetContents_MinBtn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>18</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <widget class="QPushButton" name="MinBtn">
+       <property name="geometry">
+        <rect>
+         <x>1</x>
+         <y>1</y>
+         <width>18</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QScrollArea" name="ScrollArea_CloseBtn">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>3</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+      </font>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="ScrollAreaWidgetContents_CloseBtn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>18</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <widget class="QPushButton" name="CloseBtn">
+       <property name="geometry">
+        <rect>
+         <x>1</x>
+         <y>1</y>
+         <width>18</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="TitleLabel_Name">
+    <property name="geometry">
+     <rect>
+      <x>45</x>
+      <y>15</y>
+      <width>100</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>农委设备</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>551</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QGroupBox" name="groupBox_LNG">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>110</y>
+       <width>171</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="title">
+      <string>经度</string>
+     </property>
+     <widget class="QPushButton" name="RLNGBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>读取经度</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="WLNGBtn">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>设置经度</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LineEdit_LNG">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_ALT">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>10</y>
+       <width>171</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="title">
+      <string>海拔</string>
+     </property>
+     <widget class="QPushButton" name="RALTBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>读取高度</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="WALTBtn">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>设置高度</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LineEdit_ALT">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_time">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>10</y>
+       <width>171</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="title">
+      <string>设备时间</string>
+     </property>
+     <widget class="QDateTimeEdit" name="RdateTimeEdit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>151</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="dateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2018</year>
+        <month>9</month>
+        <day>1</day>
+       </datetime>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="RTimeBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>读取时钟</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="WTimeBtn">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>设置时钟</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_UPDATE">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>210</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="title">
+      <string>远程升级</string>
+     </property>
+     <widget class="QPushButton" name="RUPDATEBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>开始</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_RESET">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="title">
+      <string>采集器</string>
+     </property>
+     <widget class="QPushButton" name="RRESETBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>重启</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_down">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>210</y>
+       <width>241</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="title">
+      <string>数据补抄</string>
+     </property>
+     <widget class="QDateTimeEdit" name="BdateTimeEdit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>141</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="dateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2018</year>
+        <month>9</month>
+        <day>1</day>
+       </datetime>
+      </property>
+     </widget>
+     <widget class="QDateTimeEdit" name="EdateTimeEdit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>141</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="dateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2018</year>
+        <month>9</month>
+        <day>1</day>
+       </datetime>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DownBtn">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>20</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>补抄数据</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_ID">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>171</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="title">
+      <string>设备号</string>
+     </property>
+     <widget class="QPushButton" name="RIDBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>读取设备号</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="WIDBtn">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>设置设备号</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="DevicelineEdit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_LAT">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>171</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font/>
+     </property>
+     <property name="title">
+      <string>纬度</string>
+     </property>
+     <widget class="QPushButton" name="RLATBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>读取纬度</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="WLATBtn">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>设置纬度</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LineEdit_LAT">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>DevicelineEdit</tabstop>
+  <tabstop>RIDBtn</tabstop>
+  <tabstop>WIDBtn</tabstop>
+  <tabstop>RdateTimeEdit</tabstop>
+  <tabstop>RTimeBtn</tabstop>
+  <tabstop>WTimeBtn</tabstop>
+  <tabstop>LineEdit_ALT</tabstop>
+  <tabstop>RALTBtn</tabstop>
+  <tabstop>WALTBtn</tabstop>
+  <tabstop>LineEdit_LAT</tabstop>
+  <tabstop>RLATBtn</tabstop>
+  <tabstop>WLATBtn</tabstop>
+  <tabstop>LineEdit_LNG</tabstop>
+  <tabstop>RLNGBtn</tabstop>
+  <tabstop>WLNGBtn</tabstop>
+  <tabstop>RRESETBtn</tabstop>
+  <tabstop>RUPDATEBtn</tabstop>
+  <tabstop>BdateTimeEdit</tabstop>
+  <tabstop>EdateTimeEdit</tabstop>
+  <tabstop>DownBtn</tabstop>
+  <tabstop>MinBtn</tabstop>
+  <tabstop>CloseBtn</tabstop>
+  <tabstop>ScrollArea_MinBtn</tabstop>
+  <tabstop>ScrollArea_CloseBtn</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

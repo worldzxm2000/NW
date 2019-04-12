@@ -11,7 +11,7 @@
 //获取业务号
 int GetServiceTypeID()
 {
-    return 01;
+    return 1;
 }
 //获取业务名称
 QString GetServiceTypeName()
@@ -74,10 +74,6 @@ LRESULT Char2Json(QString &buff, QJsonObject &json)
 					QString time = Convert2Time(strlist.at(3));
 					json_one.insert("ObserveTime", time);
 					json_another.insert("ObserveTime", time);
-					//时间格式2
-					QString timeform = Convert2TimeForm(strlist.at(3));
-					json_one.insert("UploadTime", timeform);
-					json_another.insert("UploadTime", timeform);
 					bool ok;
 					//观察要素数量
 					int CountOfFeature = ((QString)strlist.at(4)).toInt(&ok, 10);
@@ -213,6 +209,11 @@ LRESULT Char2Json(QString &buff, QJsonObject &json)
 					QJsonObject SubJson;
 					SubJson.insert("DataType", 3);//数据类型 3心跳数据
 					SubJson.insert("StationID", subStr);
+	
+					SubJson.insert("DeviceID", "2");
+					json.insert(QString::number(Count), SubJson);
+					SubJson.insert("DeviceID", "1");
+					Count++;
 					json.insert(QString::number(Count), SubJson);
 					i = j;
 					break;
@@ -233,19 +234,113 @@ LRESULT Char2Json(QString &buff, QJsonObject &json)
 	return 1;
 }
 
-//字符串转成数据库时间格式
+//字符串转成显示时间格式
 QString Convert2Time(QString strTime)
 {
-    QString tmp;
-    tmp="to_date('"+strTime.mid(0,4)+"-"+strTime.mid(4,2)+"-"+strTime.mid(6,2)+" "+strTime.mid(8,2)+":"+strTime.mid(10,2)+":"+strTime.mid(12,2)+"', 'yyyy-mm-dd hh24:mi:ss')";
-    return tmp;
+	QString tmp;
+	tmp = strTime.mid(0, 4) + "-" + strTime.mid(4, 2) + "-" + strTime.mid(6, 2) + " " + strTime.mid(8, 2) + ":" + strTime.mid(10, 2) + ":" + strTime.mid(12, 2);
+	return tmp;
 }
 
-//字符串转成显示时间格式
-QString Convert2TimeForm(QString strTime)
+//调试窗体
+void  GetControlWidget(QString StationID, uint Socket, QWidget* parent)
 {
-    QString tmp;
-    tmp=strTime.mid(0,4)+"-"+strTime.mid(4,2)+"-"+strTime.mid(6,2)+" "+strTime.mid(8,2)+":"+strTime.mid(10,2)+":"+strTime.mid(12,2);
-    return tmp;
+	if (isActive)
+	{
+		return;
+	}
+	control_ui = new ControlUI();
+	isActive = true;
+	control_ui->Socket = Socket;
+	control_ui->isActive = &isActive;
+	control_ui->show();
 }
-
+//矫正时钟
+void SetTime(QString StationID, uint Socket)
+{
+	QDateTime nowtime = QDateTime::currentDateTime();
+	QString datetime = nowtime.toString("yyyy-MM-dd hh:mm:ss");
+	//设置时钟
+	QString Comm = "DATETIME " + datetime + "\r\n";
+	QByteArray ba = Comm.toLatin1();
+	LPCSTR ch = ba.data();
+	int len = Comm.length();
+	::send(Socket, ch, len, 0);
+}
+//返回值反馈
+void SetValueToControlWidget(QStringList list)
+{
+	if (control_ui == nullptr)
+		return;
+	if (isActive)
+		control_ui->setValue(list);
+}
+//发送命令
+void SetCommand(uint Socket, int CommandType, QString Params1, QString Params2, QString StationID)
+{
+	//设备终端命令
+	QString Comm;
+	
+	switch (CommandType)
+	{
+	case 101:
+		//读取ID
+		Comm = "ID\r\n";
+		break;
+	case 102:
+		//设置ID
+		Comm = "ID " + Params1 + "\r\n";
+		break;
+	case 103:
+		//读取时钟
+		Comm = "DATETIME\r\n";
+		break;
+	case 104:
+	{
+		//设置时钟
+		QDateTime nowtime = QDateTime::currentDateTime();
+		QString datetime = nowtime.toString("yyyy-MM-dd hh:mm:ss");
+		Comm = Comm = "DATETIME " + datetime + "\r\n";
+	}
+	break;
+	case 105:
+		//读取高度
+		 Comm = "ALT\r\n";
+		break;
+	case 106:
+		
+		//设置高度
+		 Comm = "ALT " + Params1 + "\r\n";
+		break;
+	case 107:
+		//读取纬度
+		 Comm = "LAT\r\n";
+		break;
+	case 108:
+		//设置纬度
+		 Comm = "LAT " + Params1 + "\r\n";
+		break;
+	case 109:
+		//读取经度
+		 Comm = "LONG\r\n";
+		break;
+	case 110:
+		//设置经度
+		 Comm = "LONG " + Params1 + "\r\n";
+		break;
+	case 111:
+		//重启采集器
+		 Comm = "RESET\r\n";
+		break;
+	case 112:
+		//远程升级
+		 Comm = "UPDATE\r\n";
+		break;
+	default:
+		break;
+	}
+	QByteArray ba = Comm.toLatin1();
+	LPCSTR ch = ba.data();
+	int len = Comm.length();
+	::send(Socket, ch, len, 0);
+}
